@@ -130,21 +130,21 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
    9. Run `mkdir logs`
    10. Run `./scripts/startVxSync-parallel.sh`
    11. Run `ps -fCnode` to ensure VX-Sync processes are running - you should see beanstalk and more than a couple of subscriberHost and a couple of endpoints
-   11.5 (sam): Add `hmp-development-box` as an entry to file HMP SUBSCRIPTION (800000).
-   12. Run `node tools/rpc/rpc-unsubscribe-all.js --host 192.168.33.10 --port 9430` to make sure all subscriptions are reset
-   13. Run a get request with curl or another rest client against VX-Sync. The IP should be the IP of the eHMP VM. You should get see a 201 response if it worked correctly.
+   12 (sam): Add `hmp-development-box` as an entry to file HMP SUBSCRIPTION (800000).
+   13. Run `node tools/rpc/rpc-unsubscribe-all.js --host 192.168.33.10 --port 9430 --accessCode XXX --verifyCode XXX` to make sure all subscriptions are reset
+   14. Run a get request with curl or another rest client against VX-Sync. The IP should be the IP of the eHMP VM. You should get see a 201 response if it worked correctly.
 
       ```
       curl -I http://192.168.33.12:8088/data/doLoad?sites=34C5
       ```
 
-   14. To check if the operational data sync completed, check the Operational Data Sync status. If the Operational Data Sync completed successfully you should see a long JSON response with multiple `"syncCompleted": true`
+   15. To check if the operational data sync completed, check the Operational Data Sync status. If the Operational Data Sync completed successfully you should see a long JSON response with multiple `"syncCompleted": true`
 
       ```
       curl -X GET http://192.168.33.10:9080/statusod/34C5
       ```
 
-   15. VxSync is now connected to JDS and VistA.
+   16. VxSync is now connected to JDS and VistA.
 
 4. Configuring RDK
    1. On the eHMP Vm switch to RDK directory, `cd /vagrant/rdk/product/production/rdk`
