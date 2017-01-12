@@ -1,6 +1,3 @@
-![alt text](https://github.com/KRMAssociatesInc/eHMP/blob/master/docs/KRM-LOGO-0708.png "KRM Associates")
-
-
 # eHMP - Enterprise Health Management Platform
 
 This guide is for the installation of eHMP on a Unix-based OS. It has not yet been tested on Windows.
@@ -132,8 +129,8 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
    8. Run `sudo npm install --no-bin-link`
    9. Run `mkdir logs`
    10. Run `./scripts/startVxSync-parallel.sh`
-   11. Run `ps aux |grep node |grep -v grep` to ensure VX-Sync processes are running - you should see    beanstalk and more than a couple of subscriberHost and
-          a couple of endpoints
+   11. Run `ps -fCnode` to ensure VX-Sync processes are running - you should see beanstalk and more than a couple of subscriberHost and a couple of endpoints
+   11.5 (sam): Add `hmp-development-box` as an entry to file HMP SUBSCRIPTION (800000).
    12. Run `node tools/rpc/rpc-unsubscribe-all.js --host 192.168.33.10 --port 9430` to make sure all subscriptions are reset
    13. Run a get request with curl or another rest client against VX-Sync. The IP should be the IP of the eHMP VM. You should get see a 201 response if it worked correctly.
 
