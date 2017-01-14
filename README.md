@@ -122,7 +122,8 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
       ```
 
    6. (Optional if local changes were done to Vagrantfile) Modify line 2 in `ehmp/product/production/vx-sync/worker-config.json` to reflect the ehmp VM's IP
-   Lines 15-28 tell VxSync where VistA is and what credentials are needed.
+          Lines 15-28 tell VxSync where VistA is and what credentials are needed.
+          Make sure the first sub under vistaSites matches parameter HMP SYSTEM NAME on the target VistA system.
           Lines 589-594 tell VxSync where JDS is.
           Ensure these lines all have the correct values.
    7. Run `cd /vagrant/ehmp/product/production/vx-sync`
