@@ -190,6 +190,8 @@ Screenshots of eHMP-UI, as well as additional documents can be found in the `doc
    6. Move up a directory: `cd /vagrant/adk/product/`
    7. Run `gradle clean test grunt_deploy`
       This will build adk to `/vagrant/adk/product/production/build/adk.tgz`
+      (sam): This step gave me so much trouble. I had to run bower manually; and had to fix the requires manually; and move
+             the bower componets over to _asset.
    8. Change to ehmp-ui directory: `cd /vagrant/ehmp-ui/product/production`
    9. Modify eHMP-UI's app.json - The attribute resourceDirectoryPath should point to the ip address of RDK: 192.168.33.12:8888.
    10. Move up a directory `cd /vagrant/ehmp-ui/product/`
